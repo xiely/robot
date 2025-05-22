@@ -626,18 +626,6 @@ export const usePermissionStore = defineStore('permission', () => {
         //   ]
         // },
         // {
-        //   "name": "Https://gitee.com/dromara/RuoYi-Vue-Plus4",
-        //   "path": "https://gitee.com/dromara/RuoYi-Vue-Plus",
-        //   "hidden": false,
-        //   "component": "Layout",
-        //   "meta": {
-        //     "title": "PLUS官网",
-        //     "icon": "guide",
-        //     "noCache": false,
-        //     "link": "https://gitee.com/dromara/RuoYi-Vue-Plus"
-        //   }
-        // },
-        // {
         //   "name": "Demo5",
         //   "path": "/demo",
         //   "hidden": false,

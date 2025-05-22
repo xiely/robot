@@ -1,9 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/package",
-  "name": "ruoyi-vue-plus",
+  "name": "coffee",
   "version": "5.3.1-2.3.0",
   "description": "咖啡机后台管理系统",
-  "author": "LionLi",
   "license": "MIT",
   "type": "module",
   "scripts": {
@@ -14,10 +13,6 @@
     "lint:eslint": "eslint",
     "lint:eslint:fix": "eslint --fix",
     "prettier": "prettier --write ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://gitee.com/JavaLionLi/plus-ui.git"
   },
   "dependencies": {
     "@element-plus/icons-vue": "2.3.1",

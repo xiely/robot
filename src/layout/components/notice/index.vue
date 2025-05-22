@@ -55,7 +55,7 @@ const onNewsClick = (item: any) => {
 
 // 前往通知中心点击
 const onGoToGiteeClick = () => {
-  window.open('https://gitee.com/dromara/RuoYi-Vue-Plus/tree/5.X/');
+  window.open('www.xxx.com');
 };
 
 onMounted(() => {
@@ -75,34 +75,42 @@ onMounted(() => {
     justify-content: space-between;
     height: 35px;
     align-items: center;
+
     .head-box-btn {
       color: var(--el-color-primary);
       font-size: 13px;
       cursor: pointer;
       opacity: 0.8;
+
       &:hover {
         opacity: 1;
       }
     }
   }
+
   .content-box {
     height: 300px;
     overflow: auto;
     font-size: 13px;
+
     .content-box-item {
       padding-top: 12px;
       display: flex;
+
       &:last-of-type {
         padding-bottom: 12px;
       }
+
       .content-box-msg {
         color: var(--el-text-color-secondary);
         margin-top: 5px;
         margin-bottom: 5px;
       }
+
       .content-box-time {
         color: var(--el-text-color-secondary);
       }
+
       .item-conten {
         width: 100%;
         display: flex;
@@ -110,6 +118,7 @@ onMounted(() => {
       }
     }
   }
+
   .foot-box {
     height: 35px;
     color: var(--el-color-primary);
@@ -120,10 +129,12 @@ onMounted(() => {
     align-items: center;
     justify-content: center;
     border-top: 1px solid var(--el-border-color-lighter);
+
     &:hover {
       opacity: 1;
     }
   }
+
   :deep(.el-empty__description p) {
     font-size: 13px;
   }

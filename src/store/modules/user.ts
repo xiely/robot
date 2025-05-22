@@ -64,7 +64,7 @@ export const useUserStore = defineStore('user', () => {
     //       "userName": "admin",
     //       "nickName": "疯狂的狮子Li",
     //       "userType": "sys_user",
-    //       "email": "crazyLionLi@163.com",
+    //       "email": "xxx@163.com",
     //       "phonenumber": "15888888888",
     //       "sex": "1",
     //       "avatar": null,
