@@ -81,7 +81,7 @@
             </vxe-column>
             <vxe-column v-else-if="item.field == 'status'" :field="item.field" :title="item.title" show-overflow :width="item?.width">
                 <template #default="{ row }">
-                  <el-switch v-model="row[item.field]" :active-value="1" :inactive-value="0"/>
+                  <el-switch v-model="row[item.field]" :active-value="1" :inactive-value="0" @change="handleStatus(row)"/>
                 </template>
             </vxe-column>
             <vxe-column v-else-if="item.field == 'smallImg'" :field="item.field" :title="item.title" show-overflow :width="item?.width">
@@ -323,11 +323,11 @@ const initForm: posForm = {
   "timeout": null,
   "status": null,
   "description": "",
-  "goodImg": [],
-  "smallImg": [],
-  "iconImg": [],
-  "coverImg": [],
-  "animationUrl": [],
+  "goodImg": "",
+  "smallImg": "",
+  "iconImg": "",
+  "coverImg": "",
+  "animationUrl": "",
   "outCode": "",
   "taskMode": null
 };
@@ -448,26 +448,11 @@ const tableData = ref<itemVo[]>([{
   "timeout": 3,
   "status": 1,
   "description": "",
-  "goodImg": [{
-    name: 'food.jpeg',
-    url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
-  }],
-  "smallImg": [{
-    name: 'food.jpeg',
-    url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
-  }],
-  "iconImg": [{
-    name: 'food.jpeg',
-    url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
-  }],
-  "coverImg": [{
-    name: 'food.jpeg',
-    url: 'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg'
-  }],
-  "animationUrl": [{
-    name: 'food.jpeg',
-    url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
-  }],
+  "goodImg": "https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100",
+  "smallImg": "https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100",
+  "iconImg": "https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100",
+  "coverImg": "https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100",
+  "animationUrl": "https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100",
   "outCode": "红他快月热切什时派队",
   "taskMode": 1,
   updateTime: 1747202602,
@@ -565,6 +550,16 @@ const handleMaterialConfig = (row: itemVo) => {
 }
 const closeDialog = () => {
   showMaterialBinConfig.value = false;
+}
+
+// 状态切换
+const handleStatus = (row: itemVo) => {
+  for (let key in form.value) {
+    form.value[key] = row[key]
+  }
+  form.value.id = row.id;
+  updateBaseGoods(form)
+  console.log(form.value, "状态切换")
 }
 
 // 复制

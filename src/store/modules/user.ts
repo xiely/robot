@@ -139,7 +139,6 @@ export const useUserStore = defineStore('user', () => {
   };
 
   const setOrganize = (value: string) => {
-    console.log(value, "VVVVVVVVVVVVVVVVVVVVVVVV")
     organize.value = value;
   }
 

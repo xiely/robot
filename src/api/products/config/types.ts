@@ -9,15 +9,15 @@ export interface posForm {
   remark: string; // 备注
   status: number; // 状态
   appCode: number; //应用类别(1咖啡、2冰激凌、3餐食)
-  goodImg: imgObj[];
-  iconImg: imgObj[];
+  goodImg: string;
+  iconImg: string;
   outCode: string; // 外部代码
   timeout: number; //制作超时（秒）
-  coverImg: imgObj[];
-  smallImg: imgObj[];
+  coverImg: string;
+  smallImg: string;
   taskMode: number; // 任务模式
   description: string;
-  animationUrl: imgObj[];
+  animationUrl: string;
   baseGoodCodeId: number; // 餐品码表
   baseGoodGroupId: number; //餐品分组
   originalPrice: number; // 原价
@@ -49,15 +49,15 @@ export interface itemVo {
   remark: string; // 备注
   status: number; // 状态
   appCode: number; //应用类别(1咖啡、2冰激凌、3餐食)
-  goodImg: imgObj[];
-  iconImg: imgObj[];
+  goodImg: string;
+  iconImg: string;
   outCode: string; // 外部代码
   timeout: number; //制作超时（秒）
-  coverImg: imgObj[];
-  smallImg: imgObj[];
+  coverImg: string;
+  smallImg: string;
   taskMode: number;
   description: string;
-  animationUrl: imgObj[];
+  animationUrl: string;
   baseGoodCodeId: number; // 餐品码表
   baseGoodGroupId: number; //餐品分组
   originalPrice: number; // 原价

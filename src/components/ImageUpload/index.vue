@@ -51,7 +51,7 @@ import { compressAccurately } from 'image-conversion';
 
 const props = defineProps({
   modelValue: {
-    type: [Object],
+    type: [Object, String],
     default: () => []
   },
   fileWidth: propTypes.number.def(5),
@@ -103,16 +103,16 @@ const fileAccept = computed(() => props.fileType.map((type) => `.${type}`).join(
 
 watch(
   () => props.modelValue,
-  async (val: []) => {
-    console.log(val, "VVVVVVVVVVVVVVVVVV")
+  async (val: [] | string) => {
     if (val) {
       // 首先将值转为数组
       let list: OssVO[] = [];
       if (Array.isArray(val)) {
         list = val as OssVO[];
       } else {
-        const res = await listByIds(val);
-        list = res.data;
+        list = [val]
+        // const res = await listByIds(val);
+        // list = res.data;
       }
       // 然后将数组转为对象数组
       fileList.value = list.map((item) => {

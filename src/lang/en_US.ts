@@ -185,7 +185,12 @@ export default {
     "新餐品介绍": "New product description",
     "餐品料仓配置": "餐品料仓配置",
     "数量": "Num",
-    "类型": "Type"
+    "类型": "Type",
+    "餐品配置": "Product Config",
+    "设备型号": "Device Type",
+    "菜单名称": "Menu Name",
+    "点餐徽标": "Ordering Logo",
+    "广告Banner": "Ad Banner",
 
 
   }
